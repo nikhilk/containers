@@ -18,16 +18,25 @@
 FROM nikhilk/os
 MAINTAINER Nikhil Kothari
 
-# IPython and related packages
-RUN apt-get install --no-install-recommends -y -q \
-    ipython ipython-notebook pandoc \
-    libzmq-dev
-
+# Install conda and various python packages
+RUN wget -O ~/miniconda.sh -nv \
+      http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
+    chmod +x ~/miniconda.sh && \
+    ~/miniconda.sh -b -f && \
+    ~/miniconda/bin/conda update --all -y &&\
+    ~/miniconda/bin/conda install -y ipython=2.4.1 \
+      jinja2 tornado pyzmq \
+      requests mock \
+      numpy scipy pandas scikit-learn \
+      matplotlib seaborn &&\
+    rm ~/miniconda.sh
+ 
 # Startup script
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Container configuration
+ENV PATH=/root/miniconda/bin:$PATH
 EXPOSE 8080
 ENTRYPOINT [ "/start.sh" ]
 

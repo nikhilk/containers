@@ -21,8 +21,8 @@ MAINTAINER Nikhil Kothari
 # Core packages
 RUN apt-get update -y
 RUN apt-get install --no-install-recommends -y -q \
-    curl g++ make wget unzip git \
-    nodejs-legacy npm python
+    curl g++ make wget unzip bzip2 git \
+    nodejs-legacy npm
 
 # Container configuration
 VOLUME [ "/data" ]
