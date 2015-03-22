@@ -19,7 +19,7 @@ FROM nikhilk/os
 MAINTAINER Nikhil Kothari
 
 # Install conda and various python packages
-RUN wget -O ~/miniconda.sh -nv \
+RUN wget -O ~/miniconda.sh \
       http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
     chmod +x ~/miniconda.sh && \
     ~/miniconda.sh -b -f && \
@@ -28,8 +28,11 @@ RUN wget -O ~/miniconda.sh -nv \
       jinja2 tornado pyzmq \
       requests mock \
       numpy scipy pandas scikit-learn \
-      matplotlib seaborn &&\
-    rm ~/miniconda.sh
+      matplotlib seaborn && \
+    rm ~/miniconda.sh && \
+    ~/miniconda/bin/conda clean -y -t && \
+    cd ~/miniconda && \
+    find . -type d -name tests | xargs rm -rf
  
 # Startup script
 ADD start.sh /start.sh
