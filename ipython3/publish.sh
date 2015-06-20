@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker push nikhilk/ipython .
+docker push nikhilk/ipython3 .
 

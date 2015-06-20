@@ -7,5 +7,5 @@ else
 fi
 
 docker run -i -p 8080:8080 -v $DATA_DIR:/data --entrypoint="/bin/bash" \
-  -t nikhilk/ipython
+  -t nikhilk/ipython3
 
