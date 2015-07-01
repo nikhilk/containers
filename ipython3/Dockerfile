@@ -25,7 +25,7 @@ RUN wget -O ~/miniconda.sh \
     ~/miniconda.sh -b -f && \
     ~/miniconda/bin/conda update --all -y &&\
     ~/miniconda/bin/conda install -y ipython \
-      jinja2 tornado pyzmq \
+      jinja2 tornado pyzmq jsonschema \
       requests mock \
       numpy scipy pandas scikit-learn \
       matplotlib seaborn && \
