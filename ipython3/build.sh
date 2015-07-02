@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker build -t nikhilk/ipython3 --no-cache .
+docker build -t nikhilk/ipython3 .
 
