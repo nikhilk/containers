@@ -11,8 +11,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 #
-# Installs ijs (along with IPython) to provide a fully packaged setup for
-# running javascript notebooks on top of node.js.
+# Installs IPython3 (aka Jupyter) and its dependencies.
 #
 
 FROM nikhilk/os
