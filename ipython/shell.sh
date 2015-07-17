@@ -6,6 +6,6 @@ else
   DATA_DIR=$1
 fi
 
-docker run -i -p 8080:8080 -v $DATA_DIR:/data --entrypoint="/bin/bash" \
+docker run -i -p 8081:8080 -v $DATA_DIR:/data --entrypoint="/bin/bash" \
   -t nikhilk/ipython
 
