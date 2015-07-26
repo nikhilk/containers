@@ -11,8 +11,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 #
-# Installs ijs (along with IPython) to provide a fully packaged setup for
-# running javascript notebooks on top of node.js.
+# Installs IPython3 (aka Jupyter) and its dependencies.
 #
 
 FROM nikhilk/os
@@ -24,8 +23,8 @@ RUN wget -O ~/miniconda.sh \
     chmod +x ~/miniconda.sh && \
     ~/miniconda.sh -b -f && \
     ~/miniconda/bin/conda update --all -y &&\
-    ~/miniconda/bin/conda install -y ipython=2.4.1 \
-      jinja2 tornado pyzmq \
+    ~/miniconda/bin/conda install -y ipython=3.2.1 \
+      jinja2 tornado pyzmq jsonschema \
       requests mock \
       numpy scipy pandas scikit-learn \
       matplotlib seaborn && \
