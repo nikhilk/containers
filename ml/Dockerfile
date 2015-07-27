@@ -11,7 +11,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 #
-# Installs IPython along with various ML toolkits.
+# Installs IPython3 (aka Jupyter) along with various ML toolkits.
 #
 
 FROM nikhilk/os
@@ -23,7 +23,7 @@ RUN wget -O ~/miniconda.sh \
     chmod +x ~/miniconda.sh && \
     ~/miniconda.sh -b -f && \
     ~/miniconda/bin/conda update --all -y &&\
-    ~/miniconda/bin/conda install -y ipython \
+    ~/miniconda/bin/conda install -y ipython=3.2.1 \
       jinja2 tornado pyzmq jsonschema \
       requests mock \
       numpy scipy pandas scikit-learn pybrain theano \
