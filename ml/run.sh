@@ -7,6 +7,7 @@ if [ "$1" = "shell" ]; then
   ENTRYPOINT=/bin/bash
 fi
 
+mkdir -p $DATA_DIR
 docker run -i -p 8081:8080 -v $DATA_DIR:/data \
   -t nikhilk/ipython --entrypoint=$ENTRYPOINT
 
