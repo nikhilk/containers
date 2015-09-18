@@ -1,3 +1,3 @@
-- Jupyter 4
+- Jupyter
 - Pylearn2
 
